@@ -5,13 +5,15 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=0.8">
         <link rel="stylesheet" type="text/css" href="style.css"/>
-        <script src="app.js"></script>
     </head>
     <body>
         <main>
             <h2>Introduce el peso del sujeto</h2>
-            <input type="range" id="range-input" min="0" max="200" value="">
-            <p id="range-value"></p>
+            <br>
+            <input type="range" id="input" min="0" max="200" step="0.01" value="">
+            <br>
+            <p><output id="value"></output></p>
         </main>
     </body>
+    <script src="./app.js"></script>
 </html>
