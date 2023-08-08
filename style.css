@@ -1,5 +1,36 @@
+/*
 @media only screen and (max-width: 800px){
-    main{
-        text-align: center;
-    }
+    
+}
+*/
+main{
+    text-align: center;
+}
+
+.circular{
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.weight{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }

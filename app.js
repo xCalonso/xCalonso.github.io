@@ -1,5 +1,6 @@
 const value = document.querySelector("#value")
 const input = document.querySelector("#input")
+const circularInput = document.getElementsByClassName('circular')[0];
 const select = document.querySelector("#medicamentos")
 const formula = document.querySelector("#formula")
 const solucion = document.querySelector("#solucion")
@@ -35,7 +36,13 @@ value.value = input.value
 input.addEventListener("input", (event) => {
   value.value = event.target.value
   calcularMedicina()
+  gradiente();
 })
+
+value.addEventListener('change', () => {
+  gradiente()
+});
+
 
 value.addEventListener("keyup", (event) => {
   if (event.key == "Enter"){
@@ -52,4 +59,24 @@ select.addEventListener("change", (event) => {
 function calcularMedicina(){
   var aux = formulas[select.value] * value.value
   solucion.textContent = aux
+}
+
+function gradiente(){
+  const inputValue = value.value;
+  const maxInputLength = 200.01; // Puedes ajustar esto según tus necesidades
+  const circleFillPercentage = (inputValue / maxInputLength) * 100;
+
+  circularInput.style.backgroundImage = `linear-gradient(0deg, blue 0% ${circleFillPercentage}%, transparent ${circleFillPercentage}% 100%)`;
+
+}
+
+var rangeSlider = document.getElementById("rs-range-line");
+var rangeBullet = document.getElementById("rs-bullet");
+
+rangeSlider.addEventListener("input", showSliderValue, false);
+
+function showSliderValue() {
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * 578) + "px";
 }
