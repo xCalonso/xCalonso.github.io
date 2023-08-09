@@ -67,16 +67,4 @@ function gradiente(){
   const circleFillPercentage = (inputValue / maxInputLength) * 100;
 
   circularInput.style.backgroundImage = `linear-gradient(0deg, blue 0% ${circleFillPercentage}%, transparent ${circleFillPercentage}% 100%)`;
-
-}
-
-var rangeSlider = document.getElementById("rs-range-line");
-var rangeBullet = document.getElementById("rs-bullet");
-
-rangeSlider.addEventListener("input", showSliderValue, false);
-
-function showSliderValue() {
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * 578) + "px";
 }
