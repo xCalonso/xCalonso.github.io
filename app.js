@@ -33,6 +33,7 @@ const formulas = {anectine: 1,
                 }
 
 value.value = input.value
+gradiente()
 input.addEventListener("input", (event) => {
   value.value = event.target.value
   calcularMedicina()

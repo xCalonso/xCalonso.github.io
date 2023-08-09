@@ -33,7 +33,11 @@ main{
     outline: none;
 }
 #input::-webkit-slider-thumb{
-    display: none;
+    position: absolute;
+    appearance: none;
+    width: 10%;
+    height: 10%;
+    background-color: black;
 }
 
 .weight{
