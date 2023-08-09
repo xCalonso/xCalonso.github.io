@@ -37,7 +37,7 @@ main{
     appearance: none;
     width: 10%;
     height: 10%;
-    background-color: black;
+    background-color: transparent;
 }
 
 .weight{
