@@ -7,6 +7,36 @@ main{
     text-align: center;
 }
 
+.scroll{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    margin: auto;
+
+    text-align: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    width: 70%;
+    height: 400px;
+}
+
+.medicamento{
+    display: flex;
+    border-radius: 15px;
+    flex-direction: column;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+
+    top: 10px;
+    height: 100px; 
+    max-width: 300px;
+    padding: 20px 15px;
+    margin: 10% 5% 5% 10%;
+    position: relative;
+    background-color: #f6f6f6;
+}
+
 .circular{
     display: inline-block;
     position: relative;

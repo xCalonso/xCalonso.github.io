@@ -1,6 +1,6 @@
 const value = document.querySelector("#value")
 const input = document.querySelector("#input")
-const circularInput = document.getElementsByClassName('circular')[0];
+const circularInput = document.querySelector('.circular');
 const select = document.querySelector("#medicamentos")
 const formula = document.querySelector("#formula")
 const solucion = document.querySelector("#solucion")
@@ -44,7 +44,6 @@ value.addEventListener('change', () => {
   gradiente()
 });
 
-
 value.addEventListener("keyup", (event) => {
   if (event.key == "Enter"){
     calcularMedicina()
@@ -64,7 +63,7 @@ function calcularMedicina(){
 
 function gradiente(){
   const inputValue = value.value;
-  const maxInputLength = 200.01; // Puedes ajustar esto según tus necesidades
+  const maxInputLength = 50.01; // Puedes ajustar esto según tus necesidades
   const circleFillPercentage = (inputValue / maxInputLength) * 100;
 
   circularInput.style.backgroundImage = `linear-gradient(0deg, blue 0% ${circleFillPercentage}%, transparent ${circleFillPercentage}% 100%)`;
