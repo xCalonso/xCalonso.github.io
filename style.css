@@ -3,11 +3,16 @@
     
 }
 */
+html{
+    background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
 main{
     text-align: center;
 }
 
-.scroll{
+#scroll{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
@@ -18,7 +23,7 @@ main{
     overflow-x: hidden;
 
     width: 70%;
-    height: 400px;
+    height: 500px;
 }
 
 .medicamento{
@@ -26,13 +31,13 @@ main{
     border-radius: 15px;
     flex-direction: column;
     transition: 0.3s ease-in-out;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    box-shadow: 0 3px 20px rgba(0,0,0,0.5);
 
     top: 10px;
     height: 100px; 
     max-width: 300px;
     padding: 20px 15px;
-    margin: 10% 5% 5% 10%;
+    margin: 10% 10% 5% 10%;
     position: relative;
     background-color: #f6f6f6;
 }

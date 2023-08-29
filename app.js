@@ -1,38 +1,38 @@
 const value = document.querySelector("#value")
 const input = document.querySelector("#input")
 const circularInput = document.querySelector('.circular');
-const select = document.querySelector("#medicamentos")
-const formula = document.querySelector("#formula")
 const solucion = document.querySelector("#solucion")
+const scroll = document.querySelector("#scroll");
 
-const medicamentos = {anectine: "1mg·kg",
-                      atropina: "",
-                      dexametasona: "",
-                      fentanilo: "",
-                      lidocaina: "1mg·kg",
-                      ondansetron: "",
-                      propofol: "",
-                      rocuronio: "",
-                      ibuprofeno: "",
-                      enantyum: "",
-                      nolotil: "40mg·kg",
-                      paracetamol: ""
+const medicamentos = {Anectine: "1mg·kg",
+                      Atropina: "",
+                      Dexametasona: "",
+                      Fentanilo: "",
+                      Lidocaina: "1mg·kg",
+                      Ondansetron: "",
+                      Propofol: "",
+                      Rocuronio: "",
+                      Ibuprofeno: "",
+                      Enantyum: "",
+                      Nolotil: "40mg·kg",
+                      Paracetamol: ""
                     }
-const formulas = {anectine: 1,
-                  atropina: "",
-                  dexametasona: "",
-                  fentanilo: "",
-                  lidocaina: 1,
-                  ondansetron: "",
-                  propofol: "",
-                  rocuronio: "",
-                  ibuprofeno: "",
-                  enantyum: "",
-                  nolotil: 40,
-                  paracetamol: ""
+const formulas = {Anectine: 1,
+                  Atropina: "",
+                  Dexametasona: "",
+                  Fentanilo: "",
+                  Lidocaina: 1,
+                  Ondansetron: "",
+                  Propofol: "",
+                  Rocuronio: "",
+                  Ibuprofeno: "",
+                  Enantyum: "",
+                  Nolotil: 40,
+                  Paracetamol: ""
                 }
 
 value.value = input.value
+calcularMedicina()
 gradiente()
 input.addEventListener("input", (event) => {
   value.value = event.target.value
@@ -50,15 +50,21 @@ value.addEventListener("keyup", (event) => {
   }
 })
 
-formula.textContent = medicamentos[select.value]
-select.addEventListener("change", (event) => {
-  formula.textContent = medicamentos[event.target.value]
-  calcularMedicina()
-})
-
 function calcularMedicina(){
-  var aux = formulas[select.value] * value.value
-  solucion.textContent = aux
+  calculos = ""
+  for (let i in medicamentos){
+    sol = formulas[i] * value.value
+    calculos += `<div class="medicamento">
+                    <div class="formula">
+                      <h3>` + i + `</h3>
+                      <p>` + medicamentos[i] + `</p>
+                    </div>
+                    <div class="calculo">
+                      <p id="solucion">` + sol + `</p>
+                    </div>
+                  </div>`
+  }
+  scroll.innerHTML = calculos
 }
 
 function gradiente(){
