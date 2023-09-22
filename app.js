@@ -3,6 +3,7 @@ const input = document.querySelector("#input")
 const circularInput = document.querySelector('.circular');
 const solucion = document.querySelector("#solucion")
 const scroll = document.querySelector("#scroll");
+var audio = document.getElementById("myAudio");
 
 const medicamentos = {Anectine: "1mg·kg",
                       Atropina: "",
@@ -72,5 +73,9 @@ function gradiente(){
   const maxInputLength = 50.01; // Puedes ajustar esto según tus necesidades
   const circleFillPercentage = (inputValue / maxInputLength) * 100;
 
-  circularInput.style.backgroundImage = `linear-gradient(0deg, blue 0% ${circleFillPercentage}%, transparent ${circleFillPercentage}% 100%)`;
+  circularInput.style.backgroundImage = `conic-gradient(blue 0% ${circleFillPercentage}%, transparent ${circleFillPercentage}% 100%)`;
+
+  // Reproducir el sonido cuando el valor del rango cambia
+  //audio.currentTime = 0; // Reiniciar el audio si ya se está reproduciendo
+  audio.play();
 }
